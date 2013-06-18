@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{380C3DF2-C802-444F-9C21-1694B2EC738C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Autofac.Integration.SharePoint.Demo</RootNamespace>
+    <AssemblyName>Autofac.Integration.SharePoint.Demo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Autofac.2.5.2.830\lib\NET35\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Autofac.2.5.2.830\lib\NET35\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Farm_DemoFeature\Farm_DemoFeature.EventReceiver.cs">
+      <DependentUpon>Farm_DemoFeature.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Site_DemoFeature\Site_DemoFeature.EventReceiver.cs">
+      <DependentUpon>Site_DemoFeature.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\WebApp_DemoFeature\WebApp_DemoFeature.EventReceiver.cs">
+      <DependentUpon>WebApp_DemoFeature.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\AutofacPlayground\Play.aspx.cs">
+      <DependentUpon>Play.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\AutofacPlayground\Play.aspx.designer.cs">
+      <DependentUpon>Play.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Playground\IPlaygroundView.cs" />
+    <Compile Include="Playground\IPlayInterface.cs" />
+    <Compile Include="Playground\ISiteLevelDependency.cs" />
+    <Compile Include="Playground\PlaygroundModule.cs" />
+    <Compile Include="Playground\PlaygroundModule2.cs" />
+    <Compile Include="Playground\PlaygroundPresenter.cs" />
+    <Compile Include="Playground\SiteLevelDependency.cs" />
+    <Compile Include="Playground\SiteLevelModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Farm_DemoFeature\Farm_DemoFeature.feature">
+      <FeatureId>{eb9d90bc-3a1a-414d-ab3a-11a44bd045dc}</FeatureId>
+    </None>
+    <None Include="Features\Site_DemoFeature\Site_DemoFeature.feature">
+      <FeatureId>{300b20b8-0e05-40ac-8692-b0e3d87f6146}</FeatureId>
+    </None>
+    <None Include="Features\WebApp_DemoFeature\WebApp_DemoFeature.feature">
+      <FeatureId>{43d70e40-b447-434b-a9dd-1cae7f000866}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8e2e585f-18b0-4533-97d2-4c78e09fbe9a}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Package\Package.package">
+      <PackageId>{2dc74f67-8267-4db3-939f-a2b976143e99}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\Farm_DemoFeature\Farm_DemoFeature.Template.xml">
+      <DependentUpon>Farm_DemoFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Site_DemoFeature\Site_DemoFeature.Template.xml">
+      <DependentUpon>Site_DemoFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\WebApp_DemoFeature\WebApp_DemoFeature.Template.xml">
+      <DependentUpon>WebApp_DemoFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\AutofacPlayground\Play.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Autofac.Integration.SharePoint.Installer\Autofac.Integration.SharePoint.Installer.csproj">
+      <Project>{6534F6DA-25D0-47CA-9A94-08AD43FA293E}</Project>
+      <Name>Autofac.Integration.SharePoint.Installer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autofac.Integration.SharePoint\Autofac.Integration.SharePoint.csproj">
+      <Project>{C436C6B2-7DAF-4286-80CC-89374FBAAEBE}</Project>
+      <Name>Autofac.Integration.SharePoint</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" />
+</Project>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2dc74f67-8267-4db3-939f-a2b976143e99" solutionId="2dc74f67-8267-4db3-939f-a2b976143e99" resetWebServer="false" name="Autofac.Integration.SharePoint.Demo" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="eb9d90bc-3a1a-414d-ab3a-11a44bd045dc" />
+    <featureReference itemId="43d70e40-b447-434b-a9dd-1cae7f000866" />
+    <featureReference itemId="300b20b8-0e05-40ac-8692-b0e3d87f6146" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="8e2e585f-18b0-4533-97d2-4c78e09fbe9a" />
+  </projectItems>
+</package>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="148d93d3-e1ab-4bb2-b167-61e0730615e3" solutionId="148d93d3-e1ab-4bb2-b167-61e0730615e3" resetWebServer="true" name="Autofac.Integration.SharePoint" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="Autofac.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="bin\Debug\Autofac.dll" />
+    <customAssembly location="Autofac.Configuration.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="bin\Debug\Autofac.Configuration.dll" />
+    <projectOutputAssembly location="Autofac.Integration.SharePoint.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Autofac.Integration.SharePoint\Autofac.Integration.SharePoint.csproj" />
+  </assemblies>
+  <features>
+    <featureReference itemId="8d721a8c-5958-41fb-b627-20780103f476" />
+  </features>
+</package>

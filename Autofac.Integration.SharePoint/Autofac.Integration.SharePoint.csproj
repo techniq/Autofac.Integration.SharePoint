@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C436C6B2-7DAF-4286-80CC-89374FBAAEBE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Autofac.Integration.SharePoint</RootNamespace>
+    <AssemblyName>Autofac.Integration.SharePoint</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Autofac.2.5.2.830\lib\NET35\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Autofac.2.5.2.830\lib\NET35\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutofacEnabledChecker.cs" />
+    <Compile Include="AutofacModuleBoundary.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyProvider.cs" />
+    <Compile Include="ServiceLocatorInitializationModule.cs" />
+    <Compile Include="AutofacIntegrationInstaller.cs" />
+    <Compile Include="Integration\ContainerDisposalModule.cs" />
+    <Compile Include="Integration\ContainerDisposalModuleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContainerDisposalModuleResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Integration\ContainerProvider.cs" />
+    <Compile Include="Integration\ContainerProviderContainer.cs" />
+    <Compile Include="Integration\Forms\AttributedInjection.cs" />
+    <Compile Include="Integration\Forms\AttributedInjectionModule.cs" />
+    <Compile Include="Integration\Forms\DependencyInjectionAttribute.cs" />
+    <Compile Include="Integration\Forms\DependencyInjectionModule.cs" />
+    <Compile Include="Integration\Forms\DependencyInjectionModuleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DependencyInjectionModuleResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Integration\Forms\IInjectionBehaviour.cs" />
+    <Compile Include="Integration\Forms\InjectPropertiesAttribute.cs" />
+    <Compile Include="Integration\Forms\InjectUnsetPropertiesAttribute.cs" />
+    <Compile Include="Integration\Forms\NoInjection.cs" />
+    <Compile Include="Integration\Forms\PageInjectionBehaviour.cs" />
+    <Compile Include="Integration\Forms\PropertyInjection.cs" />
+    <Compile Include="Integration\Forms\PropertyInjectionModule.cs" />
+    <Compile Include="Integration\Forms\UnsetPropertyInjection.cs" />
+    <Compile Include="Integration\Forms\UnsetPropertyInjectionModule.cs" />
+    <Compile Include="Integration\IContainerProvider.cs" />
+    <Compile Include="Integration\IContainerProviderAccessor.cs" />
+    <Compile Include="Integration\RegistrationExtensions.cs" />
+    <Compile Include="Integration\WebLifetime.cs" />
+    <Compile Include="SPContainerBuilder.cs" />
+    <Compile Include="SPContainerProviderRegistry.cs" />
+    <Compile Include="SPScope.cs" />
+    <Compile Include="SPServiceLocator.cs" />
+    <Compile Include="ISPContainerProvider.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPContainerProvider.cs" />
+    <Compile Include="Logging\UlsLogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Integration\ContainerDisposalModuleResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContainerDisposalModuleResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integration\Forms\DependencyInjectionModuleResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DependencyInjectionModuleResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
