@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Autofac.Integration.SharePoint")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Autofac integration module for SharePoint.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Sean Lynch")]
 [assembly: AssemblyProduct("Autofac.Integration.SharePoint")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
+[assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
