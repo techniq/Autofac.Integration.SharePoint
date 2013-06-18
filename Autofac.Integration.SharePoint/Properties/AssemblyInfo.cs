@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("Autofac.Integration.SharePoint")]
+[assembly: AssemblyTitle("Autofac SharePoint Integration")]
 [assembly: AssemblyDescription("Autofac integration module for SharePoint.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sean Lynch")]
@@ -35,5 +35,5 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.1")]
+[assembly: AssemblyFileVersion("1.0.0.1")]
